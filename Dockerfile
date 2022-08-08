@@ -32,7 +32,8 @@ LABEL maintainer="Praveen Beniwal <pbeniwal2601@gmail.com>"
 
 ENTRYPOINT ["docker-entrypoint.sh"]
 ENV HOME /bitcoin
-EXPOSE 8332 8333
+EXPOSE 8332 8333  
+#18332 18333 18443 18444 38333 38332
 VOLUME ["/bitcoin/.bitcoin"]
 WORKDIR /bitcoin
 
@@ -48,7 +49,7 @@ RUN apt update \
     && apt clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && ln -sv /opt/bitcoin/bin/* /usr/local/bin
 
-COPY ./btcStart ./docker-entrypoint.sh /usr/local/bin/
+COPY ./btc_oneshot ./docker-entrypoint.sh /usr/local/bin/
 COPY ./btc_init /usr/local/bin/
 
-CMD ["btcStart"]
+CMD ["btc_oneshot"]
