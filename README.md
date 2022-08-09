@@ -1,4 +1,4 @@
-Bitcoind for Docker
+Bitcoin Dockerize
 ===================
 ### BitCoin Dockerized: -> What is there
 This is a Docker image that runs the Bitcoin -0.21.0 bitcoind node in a container. It carry out some basic test on our image for security concerns. We can run the test ourselves once we create the image. Currently we are exposing only two ports but We can expose multiple ports for Wer testing.
@@ -24,24 +24,20 @@ Requirements
 * At least 100 GB to store the block chain files (and always growing!)
 * At least 1 GB RAM + 2 GB swap file
 
-For Quick Start
+How to start 
 -----------------------
 
-One liner for Ubuntu 14.04 LTS machines with JSON-RPC enabled on localhost and adds upstart init script:
+For Ubuntu machines with JSON-RPC enabled on localhost and adds upstart init script:
 
     curl https://raw.githubusercontent.com/kylemanna/docker-bitcoind/master/bootstrap-host.sh | sh -s trusty
 
-
-How to  Start
------------
+Running in Container:
+-------------------------
 
 1. We need to Create a `data` volume to persist the bitcoind blockchain data.  It will store the data in case of container reboot. Then we will run below commands
         ```sh
         docker volume create --name=data
-        docker run -v data:/bitcoin --name=bitcoin-server -d \
-            -p 8333:8333 \
-            -p 127.0.0.1:8332:8332 \
-            bitcoinimg:latest
+        docker run -v data:/bitcoin --name=bitcoin-server -d  -p 8333:8333  -p 127.0.0.1:8332:8332  bitcoinimg:latest
         ```sh
 
 2. We can identify the running container 
