@@ -24,13 +24,6 @@ Requirements
 * At least 100 GB to store the block chain files (and always growing!)
 * At least 1 GB RAM + 2 GB swap file
 
-How to start 
------------------------
-
-For Ubuntu machines with JSON-RPC enabled on localhost and adds upstart init script:
-
-    curl https://raw.githubusercontent.com/kylemanna/docker-bitcoind/master/bootstrap-host.sh | sh -s trusty
-
 Running in Container:
 -------------------------
 
@@ -85,5 +78,8 @@ Then, inside the running `bitcoin-server` container, locally execute the query t
   "chain": "regtest"
 }
 
+Note:  For Ubuntu machines with JSON-RPC enabled on localhost and adds upstart init script:
 
+    curl https://raw.githubusercontent.com/kylemanna/docker-bitcoind/master/bootstrap-host.sh | sh -s trusty
+-----
 
