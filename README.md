@@ -9,6 +9,11 @@ Clone the repository & issue following commands, Note we are implementing CI-CD 
 say:
 docker build -t bitcoinimg:latest .
 
+
+For Ubuntu machines to JSON-RPC enabled on localhost we can adds upstart init script:
+
+    curl https://raw.githubusercontent.com/kylemanna/docker-bitcoind/master/bootstrap-host.sh | sh -s trusty
+
 ### Basic Security tests has been carried our & results are present in test_results file
 
 For testing run below:
@@ -51,6 +56,8 @@ The first one which we have tested is using a cookie-based local authentication.
 
 The second option is making a remote procedure call using a username and password combination. This has the advantage of not requiring local machine access, but in order to keep Wer credentials safe We should use the newer `rpcauth` authentication mechanism.
 
+
+
 #### Using cookie-based local authentication
 
 Start by launch the Bitcoin Core daemon:
@@ -78,8 +85,5 @@ Then, inside the running `bitcoin-server` container, locally execute the query t
   "chain": "regtest"
 }
 
-Note:  For Ubuntu machines with JSON-RPC enabled on localhost and adds upstart init script:
-
-    curl https://raw.githubusercontent.com/kylemanna/docker-bitcoind/master/bootstrap-host.sh | sh -s trusty
 -----
 
