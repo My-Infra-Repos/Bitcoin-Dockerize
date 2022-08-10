@@ -35,18 +35,18 @@ Running in Container:
 1. We need to Create a `data` volume to persist the bitcoind blockchain data.  It will store the data in case of container reboot. Then we will run below commands
         ```sh
         docker volume create --name=data
-        docker run -v data:/bitcoin --name=bitcoin-server -d  -p 8333:8333  -p 127.0.0.1:8332:8332  bitcoinimg:latest
+        docker run -v data:/bitcoin --name=bitcoin-node -d  -p 8333:8333  -p 127.0.0.1:8332:8332  bitcoinimg:latest
         ```sh
 
 2. We can identify the running container 
 
         $ docker ps
         CONTAINER ID        IMAGE                         COMMAND             CREATED             STATUS              PORTS                                              NAMES
-        d0e1076b2dca        bitcoin:latest      "btc_oneshot"       2 seconds ago       Up 1 seconds        127.0.0.1:8332->8332/tcp, 0.0.0.0:8333->8333/tcp   bitcoind-node
+        d0e1076b2dca        bitcoin:latest      "btc_oneshot"       2 seconds ago       Up 1 seconds        127.0.0.1:8332->8332/tcp, 0.0.0.0:8333->8333/tcp   bitcoin-node
 
 3. We can then access the daemon's output with below
 
-        docker logs -f bitcoind-node
+        docker logs -f bitcoin-node
 
 ### How to interact with the daemon
 
