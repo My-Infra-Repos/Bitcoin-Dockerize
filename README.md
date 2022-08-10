@@ -58,7 +58,7 @@ The second option is making a remote procedure call using a username and passwor
 
 
 
-#### Using cookie-based local authentication
+#### We tested it using cookie-based local authentication
 
 Start by launch the Bitcoin Core daemon:
 
@@ -73,6 +73,8 @@ Then, inside the running `bitcoin-server` container, locally execute the query t
 ```sh
 ❯ docker exec --user bitcoin bitcoin-server bitcoin-cli -regtest getmininginfo
 
+OutPut will be as mentioned below
+=========================================
 {
   "blocks": 0,
   "currentblocksize": 0,
