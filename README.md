@@ -14,20 +14,20 @@ For Ubuntu machines to JSON-RPC enabled on localhost we can adds upstart init sc
 
     curl https://raw.githubusercontent.com/kylemanna/docker-bitcoind/master/bootstrap-host.sh | sh -s trusty
 
-### Basic Security tests has been carried our & results are present in test_results file
+###We do have 442 Security Tests while building Docker Image in dockerfile whereas we also do some Security test on docker images once we complete the dockerbuild. We have put Image test results in test_results file. We also verify the checksum from main bitcoin website before building the fresh image from there.
 
-For testing run below:
+For testing 
 -----------------------------
-
-test/run.sh bitcoinimg:latest
+            1. Check dockerfile log, I have attached screenshot in document for 442 tests from main Bitcoin Org.
+            2. Post Image build we can do image tests by running test/run.sh bitcoinimg:latest
 
 
 Requirements
 ------------
 
-* Physical machine, cloud instance, or VPS that supports Docker , KVM or XEN based VMs) running Ubuntu 14.04 or later (*not OpenVZ containers!*)
-* At least 100 GB to store the block chain files (and always growing!)
-* At least 1 GB RAM + 2 GB swap file
+            * Physical machine, cloud instance, or VPS that supports Docker , KVM or XEN based VMs) running Ubuntu 14.04 or later (*not OpenVZ containers!*)
+            * At least 100 GB to store the block chain files (and always growing!)
+            * At least 1 GB RAM + 2 GB swap file
 
 Running in Container:
 -------------------------
