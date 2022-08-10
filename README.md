@@ -1,9 +1,8 @@
 Bitcoin Dockerize
 ===================
 ### BitCoin Dockerized: -> What is there
-This is a Docker image that runs the Bitcoin -0.21.0 bitcoind node in a container. It carry out some basic test on our image for security concerns. We can run the test ourselves once we create the image. Currently we are exposing only two ports but We can expose multiple ports for Wer testing.
-The Image have been verified with gpg checks of bitcoin core itself.
-This image contains the main binaries from the Bitcoin Core project - `bitcoind`, `bitcoin-cli` and `bitcoin-tx`. It behaves like a binary, so We can pass any arguments to the image and they will be forwarded to the `bitcoind` binary. We need to open the requisite ports in docker file
+This is a Docker image that runs the Bitcoin -0.21.0 bitcoind node in a container.  The checksum have been verfied during the docker image build stageitself.
+The image contains the main binaries from the Bitcoin Core project - `bitcoind`, `bitcoin-cli` and `bitcoin-tx`. It behaves like a binary, so We can pass any arguments to the image and they will be forwarded to the `bitcoind` binary. We need to open the requisite ports in docker file
 ### BitCoin Dockerized: -> How to Build the image.
 Clone the repository & issue following commands, Note we are implementing CI-CD through GitHub Actions in upcoming publications.
 say:
@@ -14,7 +13,9 @@ For Ubuntu machines to JSON-RPC enabled on localhost we can adds upstart init sc
 
     curl https://raw.githubusercontent.com/kylemanna/docker-bitcoind/master/bootstrap-host.sh | sh -s trusty
 
-###We do have 442 Security Tests while building Docker Image in dockerfile whereas we also do some Security test on docker images once we complete the dockerbuild. We have put Image test results in test_results file. We also verify the checksum from main bitcoin website before building the fresh image from there.
+Security Tests
+=================
+We do have 442 Security Tests while building Docker Image in dockerfile whereas we also do some Security test on docker images once we complete the dockerbuild. We have put Image test results in test_results file. We also verify the checksum from main bitcoin website before building the fresh image from there.
 
 For testing 
 -----------------------------
