@@ -9,9 +9,6 @@ say:
 docker build -t bitcoinimg:latest .
 
 
-For Ubuntu machines to JSON-RPC enabled on localhost we can adds upstart init script:
-
-    curl https://raw.githubusercontent.com/kylemanna/docker-bitcoind/master/bootstrap-host.sh | sh -s trusty
 
 Security Tests
 =================
