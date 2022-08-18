@@ -6,8 +6,10 @@ The image contains the main binaries from the Bitcoin Core project - `bitcoind`,
 ### BitCoin Dockerized: -> How to Build the image.
 Clone the repository & issue following commands, Note we are implementing CI-CD through GitHub Actions in upcoming publications.
 say:
-docker build -t bitcoinimg:latest .
 
+``
+            docker build -t bitcoinimg:latest .
+``
 
 
 Security Tests
